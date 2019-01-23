@@ -1,0 +1,77 @@
+<div class="row example-container">
+    <div class="col-lg-1">
+    <mat-sidenav color="primary" class="navbar-container" opened mode="side">
+      <ul class="list-style-nav">
+        <br>
+      <a (click)="drawer.toggle()" >
+        <li>
+          <span class="fas fa-shopping-cart navbar-item" ></span>
+        </li>
+        <li>
+          <div class="navbar-text">Search</div>
+        </li>
+      </a>
+    
+      <hr class="line-hr">
+     
+        <li>
+          <span class="fas fa-list-alt navbar-item"></span>
+        </li>
+        <li>
+          <div class="navbar-text">Appointments</div>
+        </li>
+      
+      <hr class="line-hr">
+        <li>
+          <span class="fas fa-bookmark navbar-item"></span>
+        </li>
+        <li>
+          <div class="navbar-text">Saved Orders</div>
+        </li>
+      <hr class="line-hr">
+          
+        <li>
+          <span class="fas fa-sign-out-alt navbar-item"></span>
+        </li>
+        <li>
+          <div class="navbar-text">Logout</div>
+        </li>
+      <hr class="line-hr">
+    </ul>
+  </mat-sidenav>
+  </div>
+    <div class="col-lg-11">
+    <mat-drawer-container class="example-container" autosize>
+      
+      
+        <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+            <mat-toolbar color="primary">
+                <mat-toolbar-row>
+                  <span  class="fas fa-cart-arrow-down"> Search Patient</span>
+                </mat-toolbar-row>
+            </mat-toolbar>
+            <br>
+            <router-outlet name="sideNavOutlet"></router-outlet>
+         
+        </mat-drawer>
+        
+      
+        <div class="example-sidenav-content">
+          <div>
+            <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+              <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+                Contents for {{tab}} tab
+
+                <button mat-raised-button class="example-delete-tab-button" [disabled]="tabs.length === 1" (click)="removeTab(index)">
+                    Delete Tab
+                </button>
+              </mat-tab>
+            </mat-tab-group>
+            <router-outlet name="tabPageOutlet"></router-outlet>
+          </div>
+        </div>
+        
+      </mat-drawer-container>
+      </div>
+      </div>
+      

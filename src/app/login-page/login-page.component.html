@@ -1,0 +1,24 @@
+<div class="container-well">
+    <div  class="centered">
+      <br><br>
+      <div class="row">
+        <h3 >Login</h3>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="authLogin()" novalidate>
+        <div class="row">
+            <div *ngIf="validMessage !=''">{{validMessage}}</div>
+        </div>
+        <div class="row">
+
+            <input type="email" formControlName="email" placeholder="Email" required autofocus>
+      </div>
+      <div class="row">
+          <input type="password" formControlName="password" placeholder="Password" required>
+      </div>
+      <div class="row">
+        <input type="submit">
+      </div>
+      </form>      
+    </div>
+  </div>
+  

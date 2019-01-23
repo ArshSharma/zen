@@ -1,0 +1,18 @@
+<input class="form-control input-lg" type='text' (keyup)="onKey($event)" placeholder="Search Patients" >
+
+
+<table class="table table-hover" *ngIf='patients && patients.length'>
+ 
+  <tbody >
+    <div *ngFor='let patient of patients'>
+      <tr>
+      <div (click)="patientSelect(patient)">
+        <td>{{patient.id}}</td>
+        <td>{{patient.firstName +' '+ patient.lastName}}</td>
+        <td>{{patient.email}}</td>
+        <td>{{patient.phoneNumber}}</td>
+      </div>
+      </tr>
+    </div>
+  </tbody>
+</table>

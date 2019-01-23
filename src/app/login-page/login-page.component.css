@@ -1,0 +1,43 @@
+.container{
+    background: crimson;
+}
+.centered {
+    width: 300px; 
+    height: 300px;
+    margin: 0 auto;
+    
+}
+input[type="email"]{
+    border:crimson 1px solid;
+    
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+input[type="password"]{
+    border:crimson 1px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+.centered h3{
+    width: 400px;
+    padding-bottom:5px;
+    color:crimson ;
+    text-align: center;
+}
+input[type="checkbox"]{
+    padding: 0px;
+    margin-right: 8px;
+    border: none;
+}
+input[type="submit"]{
+    background-color: white;
+    color:#EF5350;
+    
+    font-weight: bold;
+    border:crimson 1px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
