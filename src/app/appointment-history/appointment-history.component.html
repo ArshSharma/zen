@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span  class="fas  fa-history "> Appointment History</span>
+  </mat-toolbar-row>
+  
+</mat-toolbar>
+<!-- <div class="filter-container">
+  <mat-checkbox color="primary" class="example-margin" [(ngModel)]="checked">Show All</mat-checkbox>
+  <mat-form-field>
+    <div [formGroup]="dateForm">
+      <input matInput [matDatepicker]="picker" placeholder="For Date"
+            (dateInput)="dateChanged( $event)" formControlName="date" (dateChange)="dateChanged( $event)">
+    </div>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div> -->
+
+
+<div class="list-view" *ngIf='orderList && orderList.length'>
+    <div *ngFor='let order of orderList'>
+
+      <app-appointment-history-item [order]="order"></app-appointment-history-item>
+    </div>
+
+</div>

@@ -1,0 +1,92 @@
+.add-patient-container{
+    left: 0;
+    top: 0;
+    width: 100%;
+    
+    padding: 5px;
+    padding-top: 20px; 
+    vertical-align: middle;
+    
+    text-align: center;
+}
+.add-patient-container label{
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    /* margin-right: 5px; */
+    /* padding-right: 2px; */
+    vertical-align: middle;
+    text-align: center;
+    
+}
+.gender-radio{
+    padding: 5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: center;
+}
+.add-patient-container .col-md-9{
+    padding: 0px;
+}
+.add-patient-container .col-md-3{
+    padding: 0px;
+}
+.add-patient-container input{
+    margin: 0px;
+    width: 90%;
+    padding: 5px;
+    
+}
+.add-patient-container ::placeholder{
+    font-size: 14px;
+ 
+}
+.form-control{
+    border-radius: 0;
+}
+
+.button-save{
+    background-color: #43a047;
+    padding: 8px;
+    width: 100px;
+    color: white;
+    margin: 4px;
+    margin-right: 10px;
+    border: none;
+}
+.button-save:disabled{
+   
+    color: lightgray;
+    
+}
+.button-reset{
+    background-color: red;
+    padding: 8px;
+    margin: 4px;
+    color: white;
+    width: 100px;
+    margin-left: 10px;
+    border: none;
+}
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input[type="date"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}

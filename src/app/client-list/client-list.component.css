@@ -1,0 +1,32 @@
+.list-view{
+    width: 100%;
+    overflow: hidden;
+    
+    background: white;
+    /* border-color: black; */
+    /* background: rebeccapurple; */
+}
+.client-name{
+    font-size: 16px;
+    font-weight: 400;
+}
+.client-id{
+    font-size: 14px;
+    font-weight: 500;
+}
+.client-number{
+    font-size: 13px;
+    text-align: right;
+}
+.client-email{
+    font-size: 13px;
+    text-align: right;
+}
+.client-date-of-birth{
+    font-size: 13px;
+    text-align: left;
+}
+.client-gender{
+    font-size: 13px;
+    text-align:left;
+}

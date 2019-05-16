@@ -1,43 +1,154 @@
-.container{
-    background: crimson;
+.split-left{
+    width:70%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px; 
+    background: url("./../../assets/images/zen-app-background.jpg");
 }
-.centered {
-    width: 300px; 
-    height: 300px;
-    margin: 0 auto;
+.split-right{
+    width:30%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px; 
+    background-color: #43a047;
+}
+.left-split{
+    left:0;
+    
     
 }
-input[type="email"]{
-    border:crimson 1px solid;
+
+.right-split{
+    right: 0;
     
-    width: 400px;
-    margin: 10px;
-    padding:10px;
+    
 }
-input[type="password"]{
-    border:crimson 1px solid;
-    width: 400px;
-    margin: 10px;
-    padding:10px;
-}
-.centered h3{
-    width: 400px;
-    padding-bottom:5px;
-    color:crimson ;
-    text-align: center;
-}
-input[type="checkbox"]{
+.left-split input[type="checkbox"]{
     padding: 0px;
     margin-right: 8px;
     border: none;
 }
-input[type="submit"]{
-    background-color: white;
-    color:#EF5350;
+.right-split input[type="checkbox"]{
+    padding: 0px;
+    margin-right: 8px;
+    border: none;
+}
+.centered{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.centered h3{
+    padding-bottom:5px;
+    color: #fffadf;
+    width: 100%;
+    text-align: center;
+}
+
+.left-split input[type="text"]{
+    border:#fffadf 1px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+.left-split input[type="password"]{
+    border:#fffadf 2px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+.right-split input[type="password"]{
+    border:#fffadf 2px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+
+.centered ::placeholder{
+    color: darkslategrey;
+    /* padding-left: 20px */
+    /* text-align: center; */
+}
+
+.left-split input[type="submit"]{
+    background-color:#fffadf ;
+    color:#668956;
     
     font-weight: bold;
+    border:#fffadf 1px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+.right-split input[type="submit"]{
+    background-color:#fffadf ;
+    color:#668956;
+    
+    font-weight: bold;
+    border:#fffadf 1px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+
+.left-split a{
+    
+    color: white;
+}
+
+.right-split h3{
+    color: #fffadf;
+}
+.centered img{
+    width: 80%;
+    height: 80%;
+}
+.left-split input[type="email"]{
+    border:#fffadf 2px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+.right-split input[type="email"]{
+    border:#fffadf 2px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+.right-split input[type="date"]{
+    
     border:crimson 1px solid;
     width: 400px;
     margin: 10px;
     padding:10px;
+}
+
+.right-split input[type="number"]{
+    border:crimson 1px solid;
+    width: 400px;
+    margin: 10px;
+    padding:10px;
+}
+
+
+.right-split input[type="checkbox"]{
+    padding: 0px;
+    margin-right: 8px;
+    border: none;
+
+}
+.terms{
+    color: #EF5350;
+}
+.remember{
+    
+    color: white;
 }

@@ -1,0 +1,22 @@
+<mat-tab-group  [selectedIndex]="selected.value"
+               (selectedIndexChange)="selected.setValue($event)" [color]="sec" [backgroundColor]="background">
+  <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+    <ng-template mat-tab-label>
+      {{tab}}
+      <button class="btn-tab" (click)="removeTab(index)">
+        X
+      </button>
+    </ng-template>
+    <app-appointment-schedule-page (closeTab)="removeTabEvent(index)" [namea]="tab"></app-appointment-schedule-page>      
+  </mat-tab>
+  <mat-tab *ngFor="let tab of reciptTab; let index = index" [label]="tab">
+    <ng-template mat-tab-label>
+      {{tab}}
+      <button class="btn-tab"  (click)="removeReciptTab(index)">
+        X
+      </button>
+    </ng-template>
+    <app-order-recipt [name]="tab"></app-order-recipt>      
+  </mat-tab>
+  
+</mat-tab-group>

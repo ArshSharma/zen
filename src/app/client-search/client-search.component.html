@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span  class="fas fa-plus-circle">New Appointment</span>
+  </mat-toolbar-row>
+  
+</mat-toolbar>
+
+<div class="container-search">
+  <input class="form-control input-lg" type='text' (keyup)="onKey($event)" placeholder="Search Client" >
+
+
+
+
+<table class="table" *ngIf='clients && clients.length'>
+  <tbody >
+    <div *ngFor='let client of clients'>
+        <div (click)="clientSelect(client)">
+      <tr>
+        <td scope="row">{{client.clientId}}</td>
+        <td >{{client.firstName +' '+ client.lastName}}</td>
+        <td >{{client.dateOfBirth}}</td>
+        <td >{{client.gender}}</td>
+        <td>
+          <div class="item-edit">
+          <a (click)="editClient($event,client)">
+            <span class="fas fa-pencil-alt" ></span>
+        </a>
+        </div>
+      </td>
+      </tr>
+      </div>
+    </div>
+  </tbody>
+  
+      
+    
+</table>
+</div>

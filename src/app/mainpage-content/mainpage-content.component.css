@@ -14,20 +14,25 @@
     width: 200px;
     background: rgba(255, 0, 0, 0.5);
   } */
+  .mat-drawer-container{
+    position: initial;
+  }
+  .mat-drawer{
+    background: red;
+  }
   .example-container {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    
+    position: fixed;
+    left: 82px;
+    height: 100%;
+    width: 100%;
   }
-  .line-hr{
-    background-color: honeydew;
-    color: white;
-    
+  
+  .side-nav{
+    width:100px;
   }
-
+  .main-screen{
+    width: 100%;
+  }
   .navbar-container {
     top: 0px;
     bottom: 0px;
@@ -35,7 +40,7 @@
     padding-left: 15px;
     left:0;
     right: 0;
-    background-color: #673ab7;
+    background-color:#43a047;
   }
   .navbar-item{
     
@@ -54,7 +59,7 @@
     padding: 0px;
   }
   .color-pri{
-    background-color: #7E3FF2;
+    background-color: #668956;
   }
   
   .example-sidenav-content {
@@ -91,3 +96,37 @@
     right: 0;
   }
   
+/* --------------------------- */
+.side-navbar{
+  position: fixed;
+  display: block;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background: #43a047;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  z-index: 1;
+}
+.line-hr{
+  background-color: honeydew;
+  color: white;
+  margin: 0px;
+}
+.side-nav-item{
+  display: block;
+  padding-top: 10px;
+}
+.side-nav-item :hover .navbar-text{
+  color:#fffadf;
+  /* display: block;
+  background: pink; */
+}
+.side-nav-item :hover span{
+  color:#fffadf;
+  /* display: block;
+  background: pink; */
+}

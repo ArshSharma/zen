@@ -1,0 +1,42 @@
+.container-search{
+    padding: 10px;
+
+}
+
+td:nth-child(1){
+    /* background: red; */
+    /* width: 10%; */
+    width: 10%;
+
+}
+td:nth-child(2){
+    /* background: blue; */
+    width: 40%;
+
+}
+td:nth-child(3){
+    /* background: yellow; */
+    width: 25%;
+}
+td:nth-child(4){
+    /* background: pink; */
+    width: 20%;
+}
+td:nth-child(5){
+    width: 5%;
+    /* font-size: 20px; */
+   
+}
+.item-edit :hover{
+    color: white;
+    /* background: red; */
+    z-index: 100;
+}
+.item-edit{
+    z-index: 100;
+}
+
+tr:hover{
+    background: lightgreen;
+}
+

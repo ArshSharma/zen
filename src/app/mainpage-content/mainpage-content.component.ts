@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,DoCheck } from '@angular/core';
 import {FormControl} from '@angular/forms';
 
 @Component({
@@ -9,21 +9,35 @@ import {FormControl} from '@angular/forms';
 export class MainpageContentComponent implements OnInit {
 
   constructor() { }
-
+  
+  drawerIsOpen=true;
+  drawerClickValue=1;
+  drawerVal;
   ngOnInit() {
+    
+    
   }
-  tabs = ['First', 'Second', 'Third'];
-  selected = new FormControl(0);
 
-  addTab(selectAfterAdding: boolean) {
-    this.tabs.push('New');
-
-    if (selectAfterAdding) {
-      this.selected.setValue(this.tabs.length - 1);
+  ngDoCheck(){
+    this.drawerVal=sessionStorage.getItem("drawerValue");
+    sessionStorage.setItem('drawerValue','true');
+    if(this.drawerVal=='false'){
+      this.drawerIsOpen=false;
+      
     }
   }
 
-  removeTab(index: number) {
-    this.tabs.splice(index, 1);
+  
+  toggleDrawer(drawerValue){
+    if(this.drawerClickValue!=drawerValue && this.drawerIsOpen==true){
+      this.drawerClickValue=drawerValue
+    }
+    else if(this.drawerIsOpen==true){
+      
+      this.drawerIsOpen=false;
+    }else{
+      this.drawerIsOpen=true;
+    }
   }
+
 }

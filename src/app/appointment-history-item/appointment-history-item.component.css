@@ -1,0 +1,39 @@
+.list-view-card{
+    display: block;
+    /* width: 100%;
+    overflow: hidden; */
+    padding: 10px;
+    border: 1px lightgreen solid;
+    /* background: white; */
+    /* border-color: black; */
+    /* background: rebeccapurple; */
+}
+.list-view-card:hover{
+    box-shadow: 10px;
+    background: lightgreen;
+    /* background: red; */
+}
+.client-name{
+    font-size: 14px;
+    font-weight: 400;
+}
+.client-id{
+    font-size: 12px;
+    font-weight: 500;
+}
+.client-number{
+    font-size: 12px;
+    text-align: right;
+}
+.client-email{
+    font-size: 12px;
+    text-align: right;
+}
+.client-date-of-birth{
+    font-size: 12px;
+    text-align: left;
+}
+.client-gender{
+    font-size: 12px;
+    text-align:left;
+}

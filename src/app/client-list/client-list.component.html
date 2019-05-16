@@ -1,0 +1,12 @@
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span  class="fas fa-address-book"> Client List</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="list-view" *ngIf='clientList && clientList.length'>
+    <div *ngFor='let client of clientList'>
+      <app-client-list-item (click)="clientSelect(client)" [client]="client"></app-client-list-item>
+    </div>
+
+</div>

@@ -1,0 +1,156 @@
+<div id="print-section" class="invoice-box"> 
+  <table cellpadding="0" cellspacing="0">    
+    <tr class="top">    
+      <td colspan="2">    
+        <table>    
+          <tr> 
+            <td>
+              <b>Order Id: #{{order.orderId}}</b><br>      
+              Recipt Date: {{order.orderDate | date:'medium'}}<br>    
+              Appointment Date: {{order.appointmentDate | date:'medium'}}
+            </td>       
+            <td class="title" > 
+              <div class="logo-holder">                     
+                <img src="./../../assets/images/Leaf_Grey-pdf.png" style="width:100%; max-width:300px;">   
+              </div> 
+            </td>    
+          </tr>    
+        </table>    
+      </td>    
+    </tr>    
+    <tr class="information">    
+      <td colspan="2">
+        
+        <table class="top-info" cellpadding="0" cellspacing="0">    
+          <tr>
+              <td class="col-patient-information"> 
+                  <div *ngIf='order'>
+                    <table class="table-patient-information">
+                      <tr>
+                        
+                        <td>C ID:</td>
+                        <td>:</td>
+                         <td>{{order.client.clientId}}</td>
+                         
+                      </tr>
+                      <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>{{order.client.firstName +" "+ order.client.lastName  | titlecase}}</td>
+                      </tr>
+                      <tr>
+                        <td>Contact No.</td>
+                        <td>:</td>
+                        <td>{{order.client.phoneNumber}}</td>
+                      </tr>
+                    </table>
+                    <!-- Reg. No: {{patient.id}} <br>    
+                    <b>{{patient.firstName+' '+patient.lastName}}</b><br>    
+                    {{patient.phoneNumber}}   -->
+                  </div>
+                </td>      
+            <td>    
+              Zen Medi Spa & Dental Clinic<br>    
+              Address Lane 1<br>    
+              Jammu-123456
+            </td>     
+          </tr>    
+        </table>    
+      </td>    
+    </tr>    
+      
+  </table>
+  <!-- ----------------------------------- -->
+  <!-- <form autocomplete="off" novalidate (ngSubmit)="submit()" > -->
+    <!-- </form> -->
+    
+    <table class="item-list" cellpadding="0" cellspacing="0">
+    <tr class="heading">    
+      <td>    
+        No.    
+      </td>    
+      <td>    
+        Description    
+      </td>
+      <td>
+        Qty.
+      </td>
+      <td>
+        Price
+      </td>
+      <td>
+        Total Price
+      </td>   
+    </tr>
+    </table>
+    
+    <table class="item-list" *ngFor="let order of order.orderDetails; let i=index">  
+      <tr class="item" >
+        
+      <td>
+        {{i+1}}
+      </td>    
+      <td>
+        {{order.products.description}}
+        
+        
+      </td>    
+      <td>    
+        {{order.quantity}}    
+      </td>
+      <td>
+        {{order.products.price | currency: 'INR':true}}
+           
+      </td>    
+      <td>
+          {{order.products.price * order.quantity | currency: 'INR':true}}
+      </td>
+      
+      
+    </tr>
+    
+    </table> 
+    
+     <table class="item-list">
+        <tr class="total">    
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td>Total</td>   
+            <td>    
+              <div>{{order.total | currency: 'INR':true}}</div> 
+            </td>    
+          </tr>
+      <tr class="total">    
+        <td></td> 
+        <td></td>
+        <td></td>
+        <td>Discount</td>   
+        <td>    
+          <div>- {{order.discount | currency: 'INR':true}}</div> 
+        </td>    
+      </tr>
+    <tr class="total">    
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td>Amount To Pay</td>   
+      <td>    
+        <div>{{order.total - order.discount | currency: 'INR':true}}</div> 
+      </td>    
+    </tr>
+
+    
+  </table> 
+  <button class="colo"
+  printSectionId="print-section" ngxPrint
+        style="width:80px"
+        
+        >
+          Print
+      </button>
+  <!-- </form>  -->
+  <!-- ----------------------------   -->
+</div>     
+      
+        

@@ -1,0 +1,249 @@
+
+    .invoice-box{
+        max-width:80%;
+        
+        margin:auto;
+        padding:30px;
+        border:1px solid #eee;
+        box-shadow:0 0 10px rgba(0, 0, 0, .15);
+        font-size:12px;
+        line-height:24px;
+        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color:#555;
+    }
+    .logo-holder{
+        background:#263238;
+        width: 200px;
+        padding: 20px;
+        right: 0;
+        float: right;
+    }
+    .invoice-box table{
+        width:100%;
+        line-height:inherit;
+        text-align:left;
+    }
+    
+    .invoice-box table td{
+        padding:5px;
+        vertical-align:top;
+        font-size: 12px;
+        
+    }
+    
+    .invoice-box table .top-info tr td:nth-child(2){
+        text-align:right;
+        /* background: red; */
+        font-size: 12px;
+    }
+    
+    .invoice-box table tr.top table td{
+        padding-bottom:20px;
+    }
+    .invoice-box .invoice_details tr td{
+        max-width: 8%;
+        text-align: center;
+        width: 8%;
+        
+    }
+    .invoice-box .invoice_details tr div td:nth-child(2){
+        text-align: left;
+        width: 28%;
+        
+        background-color: red;
+    }
+    .invoice-box .invoice_details tr td:nth-child(3){
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        width: 10%;
+        /* background-color: red; */
+    }
+    input[name='points']{
+        width: 70%;
+        max-width: 60px;
+        min-width: 30px;
+    }
+    .invoice-box .invoice_details tr td:nth-child(4){
+        text-align: center;
+        width: 8%;
+        /* background-color: red; */
+    }
+    .invoice-box .invoice_details tr td:nth-child(5){
+        text-align: center;
+        width: 8%;
+        /* background-color: red; */
+    }
+    
+    .invoice-box table tr.top table td.title{
+        font-size:12px;
+        line-height:45px;
+        color:#333;
+        right: 0px;
+    }
+    
+    .invoice-box table tr.information table td{
+        padding-bottom:40px;
+    }
+    
+    .invoice-box table tr.heading td{
+        background:#eee;
+        border-bottom:1px solid #ddd;
+        font-weight:bold;
+    }
+    
+    .invoice-box table tr.details td{
+        padding-bottom:20px;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom:1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td{
+        border-bottom:none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2){
+        
+        font-weight:bold;
+    }
+    
+    
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+        
+        .invoice-box table tr.information table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+    }
+
+    .invoice-box table tr td.col-patient-information{
+        /* background: #263238; */
+        /* width: 250px; */
+        width: auto;
+        min-width: 0px;
+        height: auto;
+        text-align: right;
+        right: 0px;
+        
+        /* border: red 2px solid; */
+    } 
+    /* .invoice-box table .table-patient-information tr{
+        width: auto;
+        height: auto;
+        line-height: 15px;
+        padding: 0px;
+        background: red;
+        border: #263238 2px solid;
+    }  */
+    .invoice-box table tr.information .table-patient-information td:nth-child(1){
+        width: 120px;
+        height: auto;
+        padding: 0px;
+        text-align:left;
+        min-width: 0px;
+    } 
+    .invoice-box table tr.information .table-patient-information td:nth-child(2){
+        min-width: 0;
+        width: auto;
+        height: auto;
+        padding: 0px;
+        text-align: center;
+    } 
+    .invoice-box table tr.information .table-patient-information td:nth-child(3){
+        min-width: 0;
+        width: auto;
+        height: auto;
+        padding: 0px;
+        text-align: left;
+    } 
+    .item-list tr td:first-child{
+        max-width: 8%;
+        text-align: center;
+        width: 8%;
+    }
+    .item-list tr td:nth-child(2){
+        text-align: left;
+        width: 28%;
+        /* background: #263238; */
+
+        
+       
+    }
+    .item-list tr td:nth-child(3){
+        
+        text-align: center;
+        width: 8%;
+        
+    }
+    .item-list tr td:nth-child(4){
+        
+        text-align: center;
+        width: 8%;
+        
+    }
+    .item-list tr td:nth-child(5){
+        
+        text-align: center;
+        width: 8%;
+        
+    }
+   
+    .order-list{
+        width: 100%;
+    }
+.colo{
+    background: #43a047;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size:14px; 
+}
+.list{
+    background: white;
+    z-index: 3;
+}
+.input-list{
+    width: 100%;
+    padding: 5px;
+
+}
+.input-list:disabled{
+    /* -webkit-appearance: none; */
+    border: none;
+    box-flex: none;
+    background-color: inherit;
+}
+.item-delete{
+    color: #43a047;
+    padding: 10px;
+   
+    font-size: 10px;
+}
+
+.invoice-box table tr.total td:nth-child(5){
+    border: none;
+    font-weight: bold;
+    /* background: #43a047; */
+    font-size: 12px;
+}
+.invoice-box table tr.total td:nth-child(4){
+    border: none;
+    font-weight: bold;
+    /* background: #43a047; */
+    font-size: 12px;
+}
+
+@media print {
+    /* app-root > * { display: none; } */
+    /* app-root app-order-recipt { display: block; } */
+    /* display: none; */
+  }
+

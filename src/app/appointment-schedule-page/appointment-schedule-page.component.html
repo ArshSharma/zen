@@ -1,104 +1,204 @@
- 
-      <div class="invoice-box"> 
-          <table cellpadding="0" cellspacing="0">    
-          <tr class="top">    
-            <td colspan="2">    
-              <table>    
-                <tr>    
-                  <td class="title">    
-                    <img src="http://nextstepwebs.com/images/logo.png" style="width:100%; max-width:300px;">    
-                  </td>    
-                  <td>    
-         Invoice #: 123<br>    
-         Created: {{currentDate}}<br>    
+<div class="invoice-box"> 
+  <table cellpadding="0" cellspacing="0">    
+    <tr class="top">    
+      <td colspan="2">    
+        <table>    
+          <tr> 
+            <td>      
+              Recipt Date: {{currentDate | date:'medium'}}<br>    
+              <!-- <mat-form-field [formGroup]="orderForm">
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Appointment Date" formControlName="appointmentDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>  -->
+              <div [formGroup]="orderForm">
+                <label for="appointmentId">Appointment Date: </label>
+              <p-calendar styleClass="test" required showButtonPanel="true"  showTime="true" id="appointmentId" [maxDate]="maxDate" [minDate]="minDate" formControlName="appointmentDate" hourFormat="12" ></p-calendar>
+            </div>
+            </td>       
+            <td class="title" > 
+              <div class="logo-holder">                     
+                <img src="./../../assets/images/Leaf_Grey-pdf.png" style="width:100%; max-width:300px;">   
+              </div> 
+            </td>    
+          </tr>    
+        </table>    
+      </td>    
+    </tr>    
+    <tr class="information">    
+      <td colspan="2">
+        
+        <table cellpadding="0" cellspacing="0">    
+          <tr>
+              <td class="col-patient-information"> 
+                  <div *ngIf='patient'>
+                    <table class="table-patient-information">
+                      <tr>
+                        <td>Registration No:</td>
+                        <td>:</td>
+                         <td>{{patient.clientId}}</td>
+                      </tr>
+                      <tr>
+                        <td>Name:</td>
+                        <td>:</td>
+                        <td>{{patient.firstName+' '+patient.lastName}}</td>
+                      </tr>
+                      <tr>
+                        <td>Contact No.:</td>
+                        <td>:</td>
+                        <td>{{patient.phoneNumber}}</td>
+                      </tr>
+                    </table>
+                    <!-- Reg. No: {{patient.id}} <br>    
+                    <b>{{patient.firstName+' '+patient.lastName}}</b><br>    
+                    {{patient.phoneNumber}}   -->
+                  </div>
+                </td>      
+            <td >    
+              Zen Medi Spa & Dental Clinic<br>    
+              Address Lane 1<br>    
+              Jammu-123456
+            </td>     
+          </tr>    
+        </table>    
+      </td>    
+    </tr>    
+      
+  </table>
+  <!-- ----------------------------------- -->
+  <form autocomplete="off" novalidate (ngSubmit)="submit()" [formGroup]="orderForm">
+    <!-- </form> -->
+    
+    <table class="item-list" cellpadding="0" cellspacing="0">
+    <tr class="heading">    
+      <td>    
+        No.    
+      </td>    
+      <td>    
+        Description    
+      </td>
+      <td>
+        Qty.
+      </td>
+      <td>
+        Price
+      </td>
+      <td>
+        Discount
+      </td>   
+    </tr>
+    </table>
+    
+    <table class="item-list"  formArrayName="orderDetails" *ngFor="let order of orderDetails.controls; let i=index">  
+      <tr class="item" [formGroupName]="i">
+        
+      <td>
+        {{i+1}}
+      </td>    
+      <td>
+        <div formGroupName="products">    
+        <input class="input-list"  id="descriptionId" type="text" (keyup)="onKey($event,i)" placeholder="Description(Start Typing)"
+           formControlName="description"
          
-         <mat-form-field>
-            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Appointment Date" [formControl]="date">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-             
-         </td>    
-         </tr>    
-         </table>    
-         </td>    
-         </tr>    
-         <tr class="information">    
-         <td colspan="2">    
-         <table>    
-         <tr>    
-         <td>    
-         Next Step Webs, Inc.<br>    
-         12345 Sunny Road<br>    
-         Sunnyville, TX 12345    
-         </td>    
-         <td> 
-           <div *ngIf='patient'> 
-         Reg. No: {{patient.id}} <br>    
-         <b>{{patient.firstName+' '+patient.lastName}}</b><br>    
-         {{patient.phoneNumber}}  
-         </div>
+           /> 
+           </div>
+        
+      </td>    
+      <td>    
+        <input class="input-list" type="number" id="quantityId" min="1" formControlName="quantity" (change)="onQuantityChange($event,i)" step="1">    
+      </td>
+      <td>
+        <div formGroupName="products">
+          <input class="input-list" type="number" id="priceId" min="0" formControlName="price" disabled step="1">  
+          </div>
            
-         </td>    
-         </tr>    
-         </table>    
-         </td>    
-         </tr>    
-         <tr class="heading">    
-         <td>    
-         Payment Method    
-         </td>    
-         <td>    
-         Check #    
-         </td>    
-         </tr>    
-         <tr class="details">    
-         <td>    
-         Check    
-         </td>    
-         <td>    
-         1000    
-         </td>    
-         </tr>    
-         <tr class="heading">    
-         <td>    
-         Item    
-         </td>    
-         <td>    
-         Price    
-         </td>    
-         </tr>    
-         <tr class="item">    
-         <td>    
-         Website design    
-         </td>    
-         <td>    
-         300    
-         </td>    
-         </tr>    
-         <tr class="item">    
-         <td>    
-         Hosting (3 months)    
-         </td>    
-         <td>    
-         75    
-         </td>    
-         </tr>    
-         <tr class="item last">    
-         <td>    
-         Domain name (1 year)    
-         </td>    
-         <td>    
-         10    
-         </td>    
-         </tr>    
-         <tr class="total">    
-         <td></td>    
-         <td>    
-         Total: $385.00    
-         </td>    
-         </tr>    
-         </table>    
-        </div>     
+      </td>    
+      <td>
+          <a (click)="deleteEntry(i)">
+              <span class="fa fa-times-circle item-delete" ></span>
+          </a>  
+      </td>
+      
+      
+    </tr>
+    
+    </table> 
+    <div *ngIf='products && products.length'>
+    <table class="item-list" *ngFor='let product of products'>
+      
+      <tr>
+        <td></td>
+        <td (click)="productSelect(product)">{{product.description}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+
+      </tr>
+        <!-- <div class="list" *ngIf='products && products.length'></div>
+            <div *ngFor='let product of products'>
+              <p (click)="productSelect(product)">{{product.description}}</p>
+            </div>
+          </div> -->
+    </table>
+    </div>
+     <table class="item-list">
+        
+      
+    <tr class="total">    
+      <td></td> 
+      <td></td>
+      <td></td>
+      <td><b>Total:</b></td>   
+      <td>    
+        <div>{{total}}</div> 
+      </td>    
+    </tr>
+    <tr class="total">    
+        <td></td> 
+        <td></td>
+        <td></td>
+        <td><b>Discount:</b></td>   
+        <td>    
+          <div [formGroup]="orderForm"><input class="input-list" type="number" id="priceId" min="0" (change)="onDiscountChange($event,i)" formControlName="discount" step="1"></div> 
+        </td>    
+      </tr>
+      <tr class="total">    
+          <td></td> 
+          <td></td>
+          <td></td>
+          <td><b>Amount To Pay:</b></td>   
+          <td>    
+            <div>{{grandTotal}}</div> 
+          </td>    
+        </tr>
+
+    <!-- <tr class="heading">    
+      <td>    
+        Payment Method    
+      </td>    
+      <td>    
+        Check #    
+      </td>    
+    </tr>
+    <tr class="details">    
+      <td>    
+        Check    
+      </td>    
+      <td>    
+        1000    
+      </td>    
+    </tr>          -->
+  </table> 
+  <button class="colo"
+        type="submit"
+        style="width:80px"
+        [title]="orderForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+        [disabled]="!orderForm.valid">
+          Save
+      </button>
+  </form> 
+  <!-- ----------------------------   -->
+</div>     
       
         

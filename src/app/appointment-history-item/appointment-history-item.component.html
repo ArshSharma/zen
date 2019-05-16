@@ -1,0 +1,17 @@
+<div class="list-view-card">
+    <div class="row">
+      <div class="col-sm-2 client-id">C ID:{{order.client.clientId}}</div>
+        <div class="col-sm-10">
+          <div class="row">
+            <div class="col-sm-6 client-name">{{order.client.firstName+' '+order.client.lastName | titlecase}}</div>
+            <!-- <div class="col-sm-4 client-gender"><b>{{order.appointmentDate | date:'medium'}}</b></div> -->
+            <div class="col-sm-6 client-number">Total: {{order.total - order.discount | currency : 'INR':true}}</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 client-date-of-birth">{{order.client.dateOfBirth | date}}</div>
+              <!-- <div class="col-sm-2 client-gender">Male</div> -->
+            <div class="col-sm-6 client-email"><b>{{order.appointmentDate | date:'medium'}}</b></div>
+          </div>
+      </div>
+    </div>
+    </div>

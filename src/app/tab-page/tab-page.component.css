@@ -1,0 +1,11 @@
+
+.btn-tab{
+    background: transparent;
+    color: white;
+    border: 0;
+    padding: 0px 10px 0px 10px ;
+}
+.btn-tab:hover{
+    color: #81c784;
+}
+
